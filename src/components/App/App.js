@@ -1,5 +1,6 @@
 import SearchBar from '../SearchBar/SearchBar'
 import BusinessList from '../BusinessList/BusinessList'
+
 import './App.css';
 
 const business = {
@@ -26,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <SearchBar searchYelp={searchYelp}/>
-      <BusinessList businesses={businesses}/>
+      <BusinessList businesses={businesses} />
     </div>
   );
 }
