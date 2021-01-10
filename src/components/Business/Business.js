@@ -3,10 +3,11 @@ import './Business.css'
 
 
 function Business(props) {
-  return (
+  console.log(props.business.id, props.business.city)
+  return (  
     <div className="Business">
       <div className="image-container">
-        <img width={200} src={props.business.imageSrc} alt=''/>
+        <img height={250} src={props.business.imageSrc} alt=''/>
       </div>
       <h2>{props.business.name}</h2>
       <div className="Business-information">

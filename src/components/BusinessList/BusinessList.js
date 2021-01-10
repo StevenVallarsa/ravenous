@@ -4,9 +4,13 @@ import './BusinessList.css'
 import Business from '../Business/Business'
 
 function BusinessList(props) {
+  console.log(props.businesses)
   return (
     <div className="BusinessList">
-      {props.businesses.map((business, index) =>  <Business key={index}business={business} />)}
+      {props.businesses.map((business, index) => {
+        console.log(business, index);
+        return <Business key={business.id} business={business} />
+      })}
     </div>
   )
 }

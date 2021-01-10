@@ -1,6 +1,7 @@
 import {yelpApiKey} from '../apiKeys'
 
 const apiKey = yelpApiKey;
+console.log(apiKey)
 
 const Yelp = {
   search(term, location, sortBy) {
@@ -8,10 +9,21 @@ const Yelp = {
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.businesses) {
-          return jsonResponse.businsses.map(business => {
-            
+          return jsonResponse.businesses.map(business => ({
+            id: business.id,
+            imageSrc: business.image_url,
+            name: business.name,
+            address: business.location.address1,
+            city: business.location.city,
+            zipCode: business.location.zip_code,
+            category: business.categories[0].title, //array of objects: alias, title
+            rating: business.rating,
+            reviewCount: business.review_count
           })
+          )
         }
       })
   }
 }
+
+export {Yelp}
